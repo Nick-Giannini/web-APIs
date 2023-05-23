@@ -148,23 +148,24 @@ function highscore() {
 
 }
 
-function rightAns(){
-    qcount++;
-    userScore++;
-    rw.textContent="CORRECT!";
-    startQuestions();
+// Old code
+//     function rightAns(){
+//     qcount++;
+//     userScore++;
+//     rw.textContent="CORRECT!";
+//     startQuestions();
 
 
 
-};
+// };
 
-function wrongAns(){
-    qcount++;
-    secondsLeft = secondsLeft - 15;
-    rw.textContent="WRONG!";
-    startQuestions();
+// function wrongAns(){
+//     qcount++;
+//     secondsLeft = secondsLeft - 15;
+//     rw.textContent="WRONG!";
+//     startQuestions();
 
-};
+// };
 
 
 function userSelects(event) {
