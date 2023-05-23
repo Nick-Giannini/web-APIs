@@ -51,3 +51,18 @@ header{
     justify-content: space-between;
     font-size: 20px;
 }
+
+.right{
+    color: rgb(89, 144, 6);
+    display: block;
+}
+
+.wrong{
+    color: red;
+    display: block;
+}
+
+.underOpt{
+    padding: 20px;
+    font-size: 24px;
+}

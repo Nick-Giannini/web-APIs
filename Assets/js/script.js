@@ -176,13 +176,21 @@ function userSelects(event) {
         if (userSelection === "true") {
             qcount++;
             userScore++;
+            rw.setAttribute('class', 'right');
             rw.textContent = "CORRECT!";
+            var messTime= setTimeout(() => {
+                rw.setAttribute('class', 'hidden')
+              }, 700);
             startQuestions();
         }
         else {
             qcount++;
             secondsLeft = secondsLeft - 15;
+            rw.setAttribute('class', 'wrong');
             rw.textContent = "WRONG!";
+            var messTime= setTimeout(() => {
+                rw.setAttribute('class', 'hidden')
+              }, 700);
             startQuestions();
         }
     }
