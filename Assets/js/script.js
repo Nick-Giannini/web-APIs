@@ -53,6 +53,7 @@ var questList = [
 var h1EL = document.getElementById('firstLine');
 var pEL = document.getElementById('info');
 var ulEL= document.querySelectorAll('.answers');
+var option = document.querySelectorAll("options");
 var timerDisplay = document.getElementById('time');
 var secondsLeft = 75;
 var qcount = 0;
@@ -61,7 +62,7 @@ var startButton = document.querySelector(".start-button");
 startButton.addEventListener("click", startQuiz);
 
 
-console.log(ulEL);
+console.log(questList[0].posAns[0]);
 
 function startQuiz(){
     
@@ -69,7 +70,6 @@ function startQuiz(){
     startQuestions();
 
 }
-
 
 
 
@@ -113,15 +113,30 @@ function startQuestions(){
 h1EL.textContent = questList[qcount].question;
 
 
+
+var option = document.querySelectorAll("options");
+
+
+
 //adds the answers to the page
 for (var i = 0; i < ulEL.length; i++) {
-    ulEL[i].addEventListener('click', function () {
         var answer=ulEL[i];
-        answer=questList.posAns[i];
-        correctAns: 0,
-    });
+       
+        answer.textContent= questList[qcount].posAns[i];
+        
+        
+        //set attribute to true or false
+        if(questList[qcount].correctAns == i){
+            answer.setAttribute("data-correct","true");
+        }
+        else{
+            answer.setAttribute("data-correct","false");
+        }
+        
+    };
 
 
+    
 
 // startButton.addEventListener("click", startQuiz);
 
