@@ -56,7 +56,8 @@ var ulEL = document.querySelectorAll('.answers');
 var optList = document.querySelector('.options');
 var timerDisplay = document.getElementById('time');
 var secondsLeft = 75;
-var qcount = 3;
+var qcount = 0;
+var userScore = 0;
 
 var startButton = document.querySelector(".start-button");
 startButton.addEventListener("click", startQuiz);
@@ -128,13 +129,14 @@ function startQuestions() {
 
     optList.addEventListener('click', function (event) {
         if (event.target.matches(".answers")) {
-            var rightAns = event.target.getAttribute("data-correct");
+            var userSelection = event.target.getAttribute("data-correct");
 
-            if (rightAns == "true") {
+            if (userSelection == "true") {
                 rightAns();
             }
             else {
                 wrongAns();
+
 
             }
 
@@ -151,14 +153,18 @@ function highscore() {
 }
 
 function rightAns(){
-
+    qcount++;
+    userScore++;
+    startQuestions();
 
 
 
 };
 
 function wrongAns(){
-
+    qcount++;
+    secondsLeft = secondsLeft - 15;
+    startQuestions();
 
 
 };
