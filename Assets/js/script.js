@@ -55,20 +55,17 @@ var pEL = document.getElementById('info');
 var ulEL = document.querySelectorAll('.answers');
 var optList = document.querySelector('.options');
 var timerDisplay = document.getElementById('time');
+var rw = document.getElementById('rw');
 var secondsLeft = 75;
 var qcount = 0;
 var userScore = 0;
 
 var startButton = document.querySelector(".start-button");
 startButton.addEventListener("click", startQuiz);
-optList.style.display="none";
-
-
-// console.log(optList.attr("data-correct"));
 
 function startQuiz() {
-    optList.style.display="block";
-
+    pEL.setAttribute('class', "hidden");
+    startButton.setAttribute('class', "hidden");
     startTimer();
     startQuestions();
 
@@ -84,7 +81,7 @@ function startTimer() {
             secondsLeft--;
             //call question function
         }
-        else if (qcount == 8) {
+        else if (qcount == 7 ) {
             timerDisplay.textContent = '';
             clearInterval(timerstart);
             // Calls function to create and append the highscore page
@@ -103,9 +100,6 @@ function startTimer() {
 
 
 function startQuestions() {
-    h1EL.textContent = '';
-    pEL.style.display = "none";
-    startButton.style.display = "none";
 
     // adds the questions to the page
     h1EL.textContent = questList[qcount].question;
@@ -114,7 +108,6 @@ function startQuestions() {
     //adds the answers to the page
     for (var i = 0; i < ulEL.length; i++) {
         var answer = ulEL[i];
-
         answer.textContent = questList[qcount].posAns[i];
 
         //set attribute to true or false
@@ -127,22 +120,7 @@ function startQuestions() {
 
     };
 
-    optList.addEventListener('click', function (event) {
-        if (event.target.matches(".answers")) {
-            var userSelection = event.target.getAttribute("data-correct");
-
-            if (userSelection == "true") {
-                rightAns();
-            }
-            else {
-                wrongAns();
-
-
-            }
-
-
-        }
-    });
+    optList.addEventListener('click', userSelects);
 
 
 };
@@ -155,6 +133,7 @@ function highscore() {
 function rightAns(){
     qcount++;
     userScore++;
+    rw.textContent="CORRECT!";
     startQuestions();
 
 
@@ -164,28 +143,25 @@ function rightAns(){
 function wrongAns(){
     qcount++;
     secondsLeft = secondsLeft - 15;
+    rw.textContent="WRONG!";
     startQuestions();
-
 
 };
 
-// console.log(rightAns);
-//             console.log(typeof rightAns);
 
-    // optList.addEventListener('click', function(event){
-    //     var targetElement = event.target;
-    //     console.log(targetElement);
-    // });
+function userSelects(event) {
+    event.stopPropagation();
+    if (event.target.matches(".answers")) {
+        var userSelection = event.target.getAttribute("data-correct");
 
-    // function myFunction(event) { 
-    //     let text = event.target.tagName;
-    //     document.getElementById("demo").innerHTML = text;
-    //   }
-
-    
-
-// startButton.addEventListener("click", startQuiz);
-
+        if (userSelection === "true") {
+            rightAns();
+        }
+        else {
+            wrongAns();
+        }
+    }
+};
 
 
 

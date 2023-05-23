@@ -1,5 +1,13 @@
-header{
-    display: flexbox;
-    justify-content: space-between;
-    width: 100%;
+:root {
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.reveal {
+    display: block;
 }

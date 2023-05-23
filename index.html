@@ -17,16 +17,19 @@
     <main>
         
         <h1 id="firstLine">Coding Quiz Challenge!</h1>
-        <p id="info">This is a 5 questions quiz consisting of multiple choice questions about Javascript, CSS and HTML. You will have 75 seconds to complete this quiz. Wrong answers will deduct 15seconds from the timer. Click Start to begin the quiz
+        <p id="info" class="reveal">This is a 5 questions quiz consisting of multiple choice questions about Javascript, CSS and HTML. You will have 75 seconds to complete this quiz. Wrong answers will deduct 15seconds from the timer. Click Start to begin the quiz
         </p>
-        <ul class="options" type="button">
-            <button id='opt0' type="button" class="answers" data-correct="false"></button>
-            <button id='opt1' type="button" class="answers" data-correct="false"></button>
-            <button id='opt2' type="button" class="answers" data-correct="false"></button>
-            <button id= 'opt3' type="button" class="answers" data-correct="false"></button>
+        <ul class="options hidden" type="button">
+            <button  type="button" class="answers" data-correct="false"></button>
+            <button  type="button" class="answers" data-correct="false"></button>
+            <button  type="button" class="answers" data-correct="false"></button>
+            <button  type="button" class="answers" data-correct="false"></button>
         </ul>
         <div>
             <button class="start-button">Start</button>
+        </div>
+        <div class="underOpt">
+            <h2 id="rw" ></h2>
         </div>
 
 
