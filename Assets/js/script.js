@@ -51,34 +51,41 @@ var questList = [
     },
 ];
 
+
 var timerDisplay = document.getElementById('timer');
 var secondsLeft = 75;
 var qcount = 0;
 
-var letsStart =
+var startButton = document.querySelector(".start-button");
 
 
-document.addEventListener("click", startTimer());
+startButton.addEventListener("click", startTimer);
+
+
+function testFunct(){
+    console.log("test");
+    return;
+};
 
 
 
 function startTimer() {
-
     var timerstart = setInterval(function() {
-      secondsLeft--;
 
-      if(secondsLeft >= 1) {
+      if(secondsLeft > 1) {
         timerDisplay.textContent = "Time: "+ secondsLeft;
+        secondsLeft--;
         //call question function
       }
       else{
+        timerDisplay.textContent = '';
         clearInterval(timerstart);
       // Calls function to create and append the highscore page
       // highscore();)
-      };
+      }
   
     }, 1000);
-  };
+  }
 
 
 
