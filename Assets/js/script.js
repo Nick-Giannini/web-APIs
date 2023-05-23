@@ -52,22 +52,19 @@ var questList = [
 
 var h1EL = document.getElementById('firstLine');
 var pEL = document.getElementById('info');
-var timerDisplay = document.getElementById('timer');
+var ulEL= document.querySelectorAll('.answers');
+var timerDisplay = document.getElementById('time');
 var secondsLeft = 75;
 var qcount = 0;
 
-
-
-
-
-
 var startButton = document.querySelector(".start-button");
-
 startButton.addEventListener("click", startQuiz);
 
+
+console.log(ulEL);
+
 function startQuiz(){
-    h1EL.textContent ='';
-    pEL.textContent =' ';
+    
     startTimer();
     startQuestions();
 
@@ -80,7 +77,7 @@ function startTimer() {
     var timerstart = setInterval(function () {
 
         if (secondsLeft > 1) {
-            timerDisplay.textContent = "Time: " + secondsLeft;
+            timerDisplay.textContent = secondsLeft;
             secondsLeft--;
             //call question function
         }
@@ -108,6 +105,26 @@ function highscore() {
 
 
 function startQuestions(){
+    h1EL.textContent ='';
+    pEL.textContent =' ';
+    
+    //if time left > 0 prompt question
+// adds the questions to the page
+h1EL.textContent = questList[qcount].question;
+
+
+//adds the answers to the page
+for (var i = 0; i < ulEL.length; i++) {
+    ulEL[i].addEventListener('click', function () {
+        var answer=ulEL[i];
+        answer=questList.posAns[i];
+        correctAns: 0,
+    });
+
+
+
+// startButton.addEventListener("click", startQuiz);
+
 
 
 
