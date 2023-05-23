@@ -81,7 +81,7 @@ function startTimer() {
             secondsLeft--;
             //call question function
         }
-        else if (qcount == 7 ) {
+        else if (qcount == 8 ) {
             timerDisplay.textContent = '';
             clearInterval(timerstart);
             // Calls function to create and append the highscore page
@@ -101,31 +101,49 @@ function startTimer() {
 
 function startQuestions() {
 
-    // adds the questions to the page
-    h1EL.textContent = questList[qcount].question;
+    console.log(secondsLeft);
+    if (secondsLeft <= 0 || qcount == 8 ) {
+        highscore();
+    }
+    else {
+        // adds the questions to the page
+        h1EL.textContent = questList[qcount].question;
+        optList.setAttribute('class', "reveal");
 
 
-    //adds the answers to the page
-    for (var i = 0; i < ulEL.length; i++) {
-        var answer = ulEL[i];
-        answer.textContent = questList[qcount].posAns[i];
+        //adds the answers to the page
+        for (var i = 0; i < ulEL.length; i++) {
+            var answer = ulEL[i];
+            answer.textContent = questList[qcount].posAns[i];
 
-        //set attribute to true or false
-        if (questList[qcount].correctAns == i) {
-            answer.setAttribute("data-correct", "true");
-        }
-        else {
-            answer.setAttribute("data-correct", "false");
-        }
+            //set attribute to true or false
+            if (questList[qcount].correctAns == i) {
+                answer.setAttribute("data-correct", "true");
+            }
+            else {
+                answer.setAttribute("data-correct", "false");
+            }
 
-    };
+        };
 
-    optList.addEventListener('click', userSelects);
+        //add event listener to the optlist/ul element
+        optList.addEventListener('click', userSelects);
 
+
+
+    }
+
+
+
+    
 
 };
 
 function highscore() {
+    pEL.setAttribute('class', "hidden");
+    startButton.setAttribute('class', "hidden");
+    optList.setAttribute('class', "hidden");
+    h1EL.textContent = "Your score is: "+userScore;
 
 
 }
@@ -155,10 +173,16 @@ function userSelects(event) {
         var userSelection = event.target.getAttribute("data-correct");
 
         if (userSelection === "true") {
-            rightAns();
+            qcount++;
+            userScore++;
+            rw.textContent = "CORRECT!";
+            startQuestions();
         }
         else {
-            wrongAns();
+            qcount++;
+            secondsLeft = secondsLeft - 15;
+            rw.textContent = "WRONG!";
+            startQuestions();
         }
     }
 };
