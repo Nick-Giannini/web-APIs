@@ -53,16 +53,16 @@ var questList = [
 var h1EL = document.getElementById('firstLine');
 var pEL = document.getElementById('info');
 var ulEL= document.querySelectorAll('.answers');
-var option = document.querySelectorAll("options");
+var optList = document.querySelectorAll(".options");
 var timerDisplay = document.getElementById('time');
 var secondsLeft = 75;
-var qcount = 0;
+var qcount = 3;
 
 var startButton = document.querySelector(".start-button");
 startButton.addEventListener("click", startQuiz);
 
 
-console.log(questList[0].posAns[0]);
+console.log(optList);
 
 function startQuiz(){
     
@@ -114,7 +114,6 @@ h1EL.textContent = questList[qcount].question;
 
 
 
-var option = document.querySelectorAll("options");
 
 
 
@@ -135,6 +134,16 @@ for (var i = 0; i < ulEL.length; i++) {
         
     };
 
+    options.addEventListener('click', function(event){
+        var targetElement = event.target;
+        console.log(targetElement);
+
+    })
+
+    // function myFunction(event) { 
+    //     let text = event.target.tagName;
+    //     document.getElementById("demo").innerHTML = text;
+    //   }
 
     
 
