@@ -61,15 +61,16 @@ function startTimer() {
     var timerstart = setInterval(function() {
       secondsLeft--;
 
-      if(secondsLeft > 1) {
+      if(secondsLeft >= 1) {
         timerDisplay.textContent = "Time: "+ secondsLeft;
         //call question function
       }
-      else if(secondsLeft === 1){
+      else{
         clearInterval(timerstart);
       // Calls function to create and append the highscore page
       // highscore();)
-      }
+      };
   
-    }, 75000);
+    }, 1000);
   };
+
