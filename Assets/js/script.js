@@ -52,20 +52,22 @@ var questList = [
 
 var h1EL = document.getElementById('firstLine');
 var pEL = document.getElementById('info');
-var ulEL= document.querySelectorAll('.answers');
-var optList =document.querySelector('.options');
+var ulEL = document.querySelectorAll('.answers');
+var optList = document.querySelector('.options');
 var timerDisplay = document.getElementById('time');
 var secondsLeft = 75;
 var qcount = 3;
 
 var startButton = document.querySelector(".start-button");
 startButton.addEventListener("click", startQuiz);
+optList.style.display="none";
 
 
 // console.log(optList.attr("data-correct"));
 
-function startQuiz(){
-    
+function startQuiz() {
+    optList.style.display="block";
+
     startTimer();
     startQuestions();
 
@@ -81,7 +83,7 @@ function startTimer() {
             secondsLeft--;
             //call question function
         }
-        else if(qcount == 8){
+        else if (qcount == 8) {
             timerDisplay.textContent = '';
             clearInterval(timerstart);
             // Calls function to create and append the highscore page
@@ -98,54 +100,71 @@ function startTimer() {
     }, 1000);
 }
 
+
+function startQuestions() {
+    h1EL.textContent = '';
+    pEL.style.display = "none";
+    startButton.style.display = "none";
+
+    // adds the questions to the page
+    h1EL.textContent = questList[qcount].question;
+
+
+    //adds the answers to the page
+    for (var i = 0; i < ulEL.length; i++) {
+        var answer = ulEL[i];
+
+        answer.textContent = questList[qcount].posAns[i];
+
+        //set attribute to true or false
+        if (questList[qcount].correctAns == i) {
+            answer.setAttribute("data-correct", "true");
+        }
+        else {
+            answer.setAttribute("data-correct", "false");
+        }
+
+    };
+
+    optList.addEventListener('click', function (event) {
+        if (event.target.matches(".answers")) {
+            var rightAns = event.target.getAttribute("data-correct");
+
+            if (rightAns == "true") {
+                rightAns();
+            }
+            else {
+                wrongAns();
+
+            }
+
+
+        }
+    });
+
+
+};
+
 function highscore() {
 
 
 }
 
-
-function startQuestions(){
-    h1EL.textContent ='';
-    pEL.textContent =' ';
-    
-// adds the questions to the page
-h1EL.textContent = questList[qcount].question;
+function rightAns(){
 
 
-//adds the answers to the page
-for (var i = 0; i < ulEL.length; i++) {
-        var answer=ulEL[i];
-       
-        answer.textContent= questList[qcount].posAns[i];
-        
-        //set attribute to true or false
-        if(questList[qcount].correctAns == i){
-            answer.setAttribute("data-correct","true");
-        }
-        else{
-            answer.setAttribute("data-correct","false");
-        }
-        
-    };
-
-    optList.addEventListener('click', function(event){
-        if(event.target.matches(".answers")){
-            var rightAns = event.target.getAttribute("data-correct");
-
-            console.log(rightAns);
-
-        }
-
-
-        // var correct = event.target;
-        // var test= correct.get("data-correct");
-        // console.log(test);
-
-        // console.log(correct);
-    });
 
 
 };
+
+function wrongAns(){
+
+
+
+};
+
+// console.log(rightAns);
+//             console.log(typeof rightAns);
 
     // optList.addEventListener('click', function(event){
     //     var targetElement = event.target;
