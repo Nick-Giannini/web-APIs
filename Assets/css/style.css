@@ -2,7 +2,7 @@
     margin-left: 300px;
     margin-right: 300px;
     text-align: center;
-    
+
 }
 
 .hidden {
@@ -17,20 +17,20 @@
 h1 {
     padding-top: 25px;
     padding-bottom: 10px;
-    font-size: 40px ;
+    font-size: 40px;
 }
 
 
 
 .start-button {
-    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
-    background-color:darkslategray;
+    box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+    background-color: darkslategray;
     color: white;
     border: none;
     border-radius: 10px;
     margin-top: 10px;
-    padding:15px;
-    min-height:30px; 
+    padding: 15px;
+    min-height: 30px;
     min-width: 125px;
     font-size: 20px;
 }
@@ -45,37 +45,37 @@ p {
     font-family: Arial, Helvetica, sans-serif
 }
 
-header{
+header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
 }
 
-.right{
+.right {
     color: rgb(89, 144, 6);
     display: block;
 }
 
-.wrong{
+.wrong {
     color: red;
     display: block;
 }
 
-.underOpt{
+.underOpt {
     padding: 20px;
     font-size: 24px;
 }
 
-.answers{
-    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
-    background-color:cornflowerblue;
+.answers {
+    box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+    background-color: cornflowerblue;
     color: white;
     border: none;
     border-radius: 10px;
     margin-top: 10px;
-    padding:15px;
-    min-height:30px; 
+    padding: 15px;
+    min-height: 30px;
     min-width: 125px;
     font-size: 20px;
 }
@@ -84,4 +84,3 @@ header{
     background-color: rgb(19, 109, 158);
     transition: 0.3s;
 }
-

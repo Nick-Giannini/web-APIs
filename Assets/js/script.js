@@ -81,7 +81,7 @@ function startTimer() {
             secondsLeft--;
             //call question function
         }
-        else if (qcount == 8 ) {
+        else if (qcount == 8) {
             timerDisplay.textContent = '';
             clearInterval(timerstart);
             // Calls function to create and append the highscore page
@@ -102,7 +102,7 @@ function startTimer() {
 function startQuestions() {
 
     console.log(secondsLeft);
-    if (secondsLeft <= 0 || qcount == 8 ) {
+    if (secondsLeft <= 0 || qcount == 8) {
         highscore();
     }
     else {
@@ -135,20 +135,25 @@ function startQuestions() {
 
 
 
-    
+
 
 };
 
 function highscore() {
-    pEL.setAttribute('class', "hidden");
+    pEL.setAttribute('class', "reveal");
     startButton.setAttribute('class', "hidden");
     optList.setAttribute('class', "hidden");
-    h1EL.textContent = "Your score is: "+userScore;
+    h1EL.textContent = "All Done!"
+    pEL.textContent = "Your score is: " + userScore;
 
 
 }
 
-
+//all done!
+//your score is
+// user input add intinals
+//submit
+//highscores
 
 
 function userSelects(event) {
@@ -161,9 +166,9 @@ function userSelects(event) {
             userScore++;
             rw.setAttribute('class', 'right');
             rw.textContent = "CORRECT!";
-            var messTime= setTimeout(() => {
+            var messTime = setTimeout(() => {
                 rw.setAttribute('class', 'hidden')
-              }, 700);
+            }, 700);
             startQuestions();
         }
         else {
@@ -171,9 +176,9 @@ function userSelects(event) {
             secondsLeft = secondsLeft - 15;
             rw.setAttribute('class', 'wrong');
             rw.textContent = "WRONG!";
-            var messTime= setTimeout(() => {
+            var messTime = setTimeout(() => {
                 rw.setAttribute('class', 'hidden')
-              }, 700);
+            }, 700);
             startQuestions();
         }
     }
