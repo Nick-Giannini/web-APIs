@@ -4,8 +4,8 @@ var pEL = document.getElementById('usScore');
 var userScore = localStorage.getItem("userScore");
 var listHs = document.querySelector('#previousHS');
 var highscores = [];
-var BackBut = document.querySelector('#to-start');
-var clearBut = document.querySelector('#clear');
+var BackButton = document.querySelector('#to-start');
+var clearButton = document.querySelector('#clear');
 
 
 
@@ -46,14 +46,14 @@ saveButton.addEventListener("click", function (event) {
     event.preventDefault();
 
     var hsText = intialsInput.value + "-" + userScore;
-    console.log(hsText);
+   
 
-    // Return from function early if submitted todoText is blank
+    // Return from function early if submitted 
     if (hsText === "") {
         return;
     }
 
-    // Add new todoText to todos array, clear the input
+    // Add new to todos array, clear the input
     highscores.push(hsText);
     hsText.value = "";
 
@@ -61,15 +61,17 @@ saveButton.addEventListener("click", function (event) {
     storeScores();
     renderHighscore();
 });
+
+
 init()
 
 
 
-BackBut.addEventListener('click', function(){
+BackButton.addEventListener('click', function(){
     window.location = "../../index.html";
 });
 
-clearBut.addEventListener('click', function(){
+clearButton.addEventListener('click', function(){
     localStorage.clear();
     window.location.reload();
 });

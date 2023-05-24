@@ -101,7 +101,6 @@ function startTimer() {
 
 function startQuestions() {
 
-    console.log(secondsLeft);
     if (secondsLeft <= 0 || qcount == 8) {
         highscore();
     }
@@ -142,9 +141,6 @@ function startQuestions() {
 function highscore() {
 
     localStorage.setItem('userScore', userScore);
-
-
-
     window.location = "./Assets/HTML/highscore.html";
 
 
