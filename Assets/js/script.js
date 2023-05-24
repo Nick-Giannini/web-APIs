@@ -140,11 +140,20 @@ function startQuestions() {
 };
 
 function highscore() {
-    pEL.setAttribute('class', "reveal");
-    startButton.setAttribute('class', "hidden");
-    optList.setAttribute('class', "hidden");
-    h1EL.textContent = "All Done!"
-    pEL.textContent = "Your score is: " + userScore;
+
+    localStorage.setItem('userScore', userScore);
+
+
+
+    window.location = "./Assets/HTML/highscore.html";
+
+
+
+    // pEL.setAttribute('class', "reveal");
+    // startButton.setAttribute('class', "hidden");
+    // optList.setAttribute('class', "hidden");
+    // h1EL.textContent = "All Done!"
+    // pEL.textContent = "Your score is: " + userScore;
 
 
 }
