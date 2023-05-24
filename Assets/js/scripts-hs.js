@@ -4,8 +4,8 @@ var pEL = document.getElementById('usScore');
 var userScore = localStorage.getItem("userScore");
 var listHs = document.querySelector('#previousHS');
 var highscores = [];
-var BackBut = querySelector('#to-start');
-var clearBut = querySelector('#clear');
+var BackBut = document.querySelector('#to-start');
+var clearBut = document.querySelector('#clear');
 
 
 
@@ -65,11 +65,12 @@ init()
 
 
 
-var BackBut = querySelector('#to-start');
-var clearBut = querySelector('#clear');
-
 BackBut.addEventListener('click', function(){
-    
+    window.location = "../../index.html";
+});
 
+clearBut.addEventListener('click', function(){
+    localStorage.clear();
+    window.location.reload();
+});
 
-})
