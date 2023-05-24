@@ -7,31 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/css/reset.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
-    <title>Document</title>
+    <title>Quiz</title>
 </head>
 
 <body>
+    <!-- header with a link to the highscore page and the timer -->
     <header>
-        <div id="scores">View Highscores</div>
+        <a href="Assets\HTML\highscore.html">Highscores!</a>
         <div id="timer">Time: <span id=time></span></div>
     </header>
 
     <main>
 
         <h1 id="firstLine">Coding Quiz Challenge!</h1>
+        <!-- this get hidden when the quiz starts. Just explains the rules -->
         <p id="info" class="reveal">This is a 5 questions quiz consisting of multiple choice questions about Javascript,
             CSS and HTML. You will have 75 seconds to complete this quiz. Wrong answers will deduct 15seconds from the
             timer. Click Start to begin the quiz!
         </p>
+        <!-- buttons for the answers. Hidden at the start of the page. -->
         <div class="options hidden" type="button">
             <button class="answers" data-correct="false"></button>
             <button class="answers" data-correct="false"></button>
             <button class="answers" data-correct="false"></button>
             <button class="answers" data-correct="false"></button>
         </div>
+
+        <!-- Start buttons -->
         <div>
             <button class="start-button">Start</button>
         </div>
+
+        <!-- locations of the Wrong/Correct message -->
         <div class="underOpt">
             <h2 id="rw"></h2>
         </div>

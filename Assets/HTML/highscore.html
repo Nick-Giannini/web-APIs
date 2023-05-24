@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/highscore.css">
-    <title>Document</title>
+    <title>HighScores!</title>
 </head>
 
 <body>
     <h1>All Done!</h1>
     <p id="usScore"></p>
 
+    <!-- form for the user to enter initials -->
     <form id="intials" method="POST">
         <div class="input-group">
             <label for="initials">User Initials:</label>
@@ -21,7 +22,8 @@
         <button id="save">SAVE</button>
     </form>
 
-    <p>HighScores</p>
+    <!-- lists the previous highscores from local storage -->
+    <h2>HighScores</h2>
     <ul id="previousHS"></ul>
 
     <div>

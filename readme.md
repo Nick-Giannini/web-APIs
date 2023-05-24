@@ -2,7 +2,7 @@
 
 ## Your Task
 
-Design a quiz that utilizes the skills we have learned so far in bootcamp. We are starting with not code or files. We are to design and create every aspect of this project. 
+Design a quiz that utilizes the skills we have learned so far in bootcamp. We are starting with no code or files. We are to design and create every aspect of this project. 
 
 ## User Story
 
@@ -36,4 +36,16 @@ THEN I can save my initials and my score
 ```
 Starting from a blank page is a daunting task. I expect to struggle with getting started. I got docked pointed from my previous homework assignment for not including a Readme file. I will try to create a better readme file for this project. Using it to document things I found difficult as I progress through the assignment.
 
-```````
+```
+
+## Testing the code.
+
+```
+Link to the GitHub page.
+https://tazzok.github.io/web-APIs/
+
+Link to GitHub repo
+https://github.com/Tazzok/web-APIs
+
+```
+
