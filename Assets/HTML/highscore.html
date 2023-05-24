@@ -5,23 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/highscore.css">
     <title>Document</title>
 </head>
 
 <body>
     <h1>All Done!</h1>
-    <p id="usScore">test</p>
+    <p id="usScore"></p>
 
     <form id="intials" method="POST">
         <div class="input-group">
             <label for="initials">User Initials:</label>
-            <input type="text" name="initials" id="userINT" placeholder=" " />
+            <input type="text" id="userINT" placeholder=" " />
         </div>
         <button id="save">SAVE</button>
     </form>
 
-    <p>HighScores!</p>
+    <p>HighScores</p>
     <ul id = "previousHS"></ul>
+
+<div>
+    <div>
+        <button id="to-start">Go Back</button>
+    </div>
+    <div>
+        <button id="clear">Clear Highscores</button>
+    </div>
+</div>
 
 
     <script src="../js/scripts-hs.js"></script>

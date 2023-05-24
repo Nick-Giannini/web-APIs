@@ -1,62 +1,75 @@
 var intialsInput = document.querySelector('#userINT');
 var saveButton = document.querySelector("#save");
-var pEL=document.getElementById('usScore');
+var pEL = document.getElementById('usScore');
 var userScore = localStorage.getItem("userScore");
 var listHs = document.querySelector('#previousHS');
 var highscores = [];
+var BackBut = querySelector('#to-start');
+var clearBut = querySelector('#clear');
 
-function init(){
+
+
+
+pEL.textContent="Your final score is "+userScore;
+
+
+function init() {
     var storedHS = JSON.parse(localStorage.getItem("highscores"));
 
-    if(storedHS !==null){
-        highscores=storedHS
+    if (storedHS !== null) {
+        highscores = storedHS
     }
     renderHighscore();
 };
 
 function renderHighscore() {
     listHs.innerHTML = " ";
-  
+
     // Render a new li for each HS
     for (var i = 0; i < highscores.length; i++) {
-      var score = highscores[i];
-      var li = document.createElement("li");
-      li.textContent = score;
-      li.setAttribute("data-index", i);
-      listHs.appendChild(li);
+        var score = highscores[i];
+        var li = document.createElement("li");
+        li.textContent = score;
+        li.setAttribute("data-index", i);
+        listHs.appendChild(li);
     }
-  };
+};
 
 
-  function storeScores() {
+function storeScores() {
     // Stringify and set key in localStorage to todos array
     localStorage.setItem("highscores", JSON.stringify(highscores));
-  }
+}
 
-  // Add submit event to form
-  saveButton.addEventListener("click", function(event) {
+// Add submit event to form
+saveButton.addEventListener("click", function (event) {
     event.preventDefault();
-  
-    var hsText = "User: "+intialsInput.value+" scored"+;
+
+    var hsText = intialsInput.value + "-" + userScore;
     console.log(hsText);
-  
+
     // Return from function early if submitted todoText is blank
     if (hsText === "") {
-      return;
+        return;
     }
-  
+
     // Add new todoText to todos array, clear the input
     highscores.push(hsText);
     hsText.value = "";
-  
+
     // Store updated todos in localStorage, re-render the list
     storeScores();
     renderHighscore();
-  });
-
-
-  init()
-
+});
+init()
 
 
 
+var BackBut = querySelector('#to-start');
+var clearBut = querySelector('#clear');
+
+BackBut.addEventListener('click', function(){
+    
+
+
+})

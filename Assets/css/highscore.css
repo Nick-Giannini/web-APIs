@@ -1,0 +1,25 @@
+:root {
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.reveal {
+    display: block;
+}
+
+
+h1 {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    font-size: 40px;
+}
+
+ul {
+    list-style-type: none;
+}
